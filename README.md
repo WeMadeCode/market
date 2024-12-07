@@ -1,2 +1,10 @@
-# coderhub
-A coderhub developed using node koa
+# market
+market旨在创建一个单身男女青年分享生活动态的平台。
+
+### 功能列表如下：
+1.用户管理系统
+2.内容管理系统
+3.内容评论管理
+4.内容标签管理
+5.文件管理系统
+

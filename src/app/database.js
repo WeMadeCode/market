@@ -11,14 +11,17 @@ const connections = mysql.createPool({
 });
 
 connections.getConnection((err, conn) => {
-  console.log("conn = ", conn);
-  conn?.connect((err) => {
-    if (err) {
-      console.log("连接失败:", err);
-    } else {
-      console.log("数据库连接成功~");
-    }
-  });
+  if (err) {
+    console.error(err);
+  } else {
+    conn.connect((err) => {
+      if (err) {
+        console.error("连接失败:", err);
+      } else {
+        console.log("数据库连接成功~");
+      }
+    });
+  }
 });
 
 module.exports = connections.promise();
