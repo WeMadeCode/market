@@ -1,9 +1,8 @@
-const fs = require('fs');
+const fs = require("fs");
 
-const userService = require('../service/user.service');
-const fileService = require('../service/file.service');
-const { AVATAR_PATH } = require('../constants/file-path');
-
+const userService = require("../service/user.service");
+const fileService = require("../service/file.service");
+const { AVATAR_PATH } = require("../constants/file-path");
 
 class UserController {
   async create(ctx, next) {
@@ -23,9 +22,10 @@ class UserController {
     const avatarInfo = await fileService.getAvatarByUserId(userId);
 
     // 2.提供图像信息
-    ctx.response.set('content-type', avatarInfo.mimetype);
+    ctx.response.set("content-type", avatarInfo.mimetype);
     ctx.body = fs.createReadStream(`${AVATAR_PATH}/${avatarInfo.filename}`);
   }
+
 }
 
 module.exports = new UserController();
