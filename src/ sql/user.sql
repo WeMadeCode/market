@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS `user`(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(30),
+	password VARCHAR(50),
+	create_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    user_id VARCHAR(50) NOT NULL,
+    open_id VARCHAR(50),
+    session_key VARCHAR(50),
+    avatar VARCHAR(200),
+    age INT DEFAULT 0,
+    gender INT DEFAULT 0,
+    tel_phone VARCHAR(20) DEFAULT '' UNIQUE NOT NULL,
+    photos_resource_id VARCHAR(20) DEFAULT '' UNIQUE NOT NULL
+);
